@@ -7,7 +7,8 @@ import { MatSidenav } from '@angular/material';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public sideNavListItems: string[] = ['About', 'Project', 'Contact'];
+  public sideNavListItems = [
+    { label: 'About' }, { label: 'Projects' }, { label: 'Contact' }];
   constructor() { }
 
   ngOnInit() {

@@ -5,11 +5,41 @@
   }
 
 mat-sidenav {
-    width: 18vw;
+    width: 300px;
     height: 100vh;
     padding: 20px;
   }
 
 .main-view{
     height: 100vh;
+}
+
+.header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.header-image{
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+
+
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
+}
+
+.material-icon {
+  cursor: pointer !important;
+}
+
+.link-icons{
+  padding: 10px;
 }
