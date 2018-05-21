@@ -1,45 +1,61 @@
-.fill-remaining-space {
+  .fill-remaining-space {
     /* This fills the remaining space, by using flexbox. 
        Every toolbar row uses a flexbox row layout. */
     flex: 1 1 auto;
   }
 
-mat-sidenav {
+  mat-sidenav {
     width: 300px;
-    height: 100vh;
+    height: 100%;
     padding: 20px;
+    position: fixed;
   }
 
-.main-view{
-    height: 100vh;
-}
+  mat-divider{
+    border-top-color:white;
+  }
 
-.header{
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  background-color: transparent;
-}
+  .transparent-toolbar{
+    background-color:transparent; 
+    position: fixed; 
+    z-index: 9999;
+    color: white;
+  }
 
-.header-image{
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
+  .white-toolbar{
+    background-color:white; 
+    position: fixed; 
+    z-index: 9999;
+    border-bottom: 1px solid #e7e7e7;
+    color: rgba(30, 30, 30, 0.97);
+  }
 
+  .welcome {
+    height:100vh; 
+    width:100vw;
+    font-size: 1.5vh;
+    background-color:rgba(30, 30, 30, 0.97);
+    background:#333 url('/assets/images/header-image.jpeg') no-repeat fixed center;
+  }
 
+  .toolbar-icons{
+    color: #444444;
+    font-size: 24px;
+    padding: 10px;
+  }
+  .toolbar-icons:hover{
+    color: #c5a47e;
+    font-size: 24px;
+  }
 
-.parallax-window {
-  min-height: 400px;
-  background: transparent;
-}
+  a {
+    text-decoration: none ;
+  }
 
-.material-icon {
-  cursor: pointer !important;
-}
+  mat-list-item:hover {
+    color: #c5a47e;
+  }
 
-.link-icons{
-  padding: 10px;
-}
+  .side-nav-divider {
+    border-top-color:#e5e5e5;
+  }

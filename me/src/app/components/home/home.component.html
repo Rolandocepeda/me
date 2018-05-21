@@ -1,37 +1,84 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" position="end">
-    <mat-list>
-      <mat-list-item fxLayout="row" fxLayoutGap="10px">
-        <a style="font-size:20px; color:gray" href="https://github.com/rolandocepeda" class="link-icons" matTooltip="Github">
-          <i class="fab fa-github"></i>
-        </a>
-        <a style="font-size:20px; color:gray" href="" class="link-icons" matTooltip="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
+  <mat-sidenav #sidenav mode="over" position="end">
+    <div fxLayout="row" fxLayoutGap="10px">
+      <a class="toolbar-icons" href="https://github.com/rolandocepeda" matTooltip="Github">
+        <i class="fab fa-github-square"></i>
+      </a>
+      <a class="toolbar-icons" href="mailto:rolando.cepeda@yahoo.com" matTooltip="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a class="toolbar-icons" href="https://www.linkedin.com/in/rolando-cepeda-3a520814a/" matTooltip="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+    <mat-list style="color:#444444">
+      <mat-divider class="side-nav-divider"></mat-divider>
+      <mat-list-item>
+        <a (click)="sidenav.toggle();scrollIntoView('about')">ABOUT</a>
       </mat-list-item>
-      <div *ngFor="let item of sideNavListItems">
-        <mat-divider></mat-divider>
-        <mat-list-item>{{item.label}}</mat-list-item>
-      </div>
+      <mat-divider class="side-nav-divider"></mat-divider>
+      <mat-list-item>
+        <a (click)="sidenav.toggle();scrollIntoView('skills')">SKILLS</a>
+      </mat-list-item>
+      <mat-divider class="side-nav-divider"></mat-divider>
+      <mat-list-item>
+        <a (click)="sidenav.toggle();scrollIntoView('projects')">PROJECTS</a>
+      </mat-list-item>
+      <mat-divider class="side-nav-divider"></mat-divider>
+      <mat-list-item>
+        <a (click)="sidenav.toggle();scrollIntoView('resume')">RESUME</a>
+      </mat-list-item>
+      <mat-divider class="side-nav-divider"></mat-divider>
+      <mat-list-item>
+        <a (click)="sidenav.toggle();scrollIntoView('contact')">CONTACT</a>
+      </mat-list-item>
     </mat-list>
   </mat-sidenav>
 
-  <mat-sidenav-content class="main-view" fxFlex="column">
-    <div>
-      <mat-toolbar color="primary" class="header" fxLayout="row" fxLayoutAlign="space-around center">
-        <span>Rolando Cepeda</span>
-        <span class="fill-remaining-space"></span>
-        <span>
-          <button mat-icon-button (click)="sidenav.toggle()">
-            <mat-icon>menu</mat-icon>
-          </button>
-        </span>
-      </mat-toolbar>
-      <img class="header-image" src="./assets/images/header-image.jpg" width="100%" height="100%">
+  <mat-sidenav-content fxFlex="column">
+    <!-- Top toolbar -->
+    <mat-toolbar [ngClass]="toolbarClass" fxLayout="row" fxLayoutAlign="space-around center">
+      <a *ngIf="showName">Rolando Cepeda</a>
+      <span class="fill-remaining-space"></span>
+      <span>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon style="color:inherit;">menu</mat-icon>
+        </button>
+      </span>
+    </mat-toolbar>
+    <!-- Main View -->
+    <div class="main-view" fxLayout="column" fxLayoutGap="80px">
+      <div #welcome class="welcome" fxLayout="column" fxLayoutAlign="center center">
+        <div style="color:white;">
+          <h1>Hello</h1>
+          <mat-divider></mat-divider>
+          <h1>Rolando Cepeda</h1>
+          <mat-divider></mat-divider>
+          <h2>Software Engineer | Web Developer</h2>
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="80px">
+        <app-aboutme #about></app-aboutme>
+        <app-skills #skills></app-skills>
+        <app-projects #projects></app-projects>
+        <app-resume #resume></app-resume>
+        <app-contact #contact></app-contact>
+      </div>
     </div>
-    <app-aboutme href="#about"></app-aboutme>
-    <app-projects href="#projects"></app-projects>
-    <app-contact href="#contact"></app-contact>
+    <!-- Bottom toolbar -->
+    <mat-toolbar-row style="background-color:rgba(30, 30, 30, 0.97);" fxLayout="row" fxLayoutAlign="center center">
+      <mat-list-item fxLayout="row" fxLayoutGap="10px">
+        <a style="font-size:32px; color:white" href="https://github.com/rolandocepeda" class="link-icons" matTooltip="Github">
+          <i class="fab fa-github"></i>
+        </a>
+        <a style="font-size:32px; color:white" href="mailto:rolando.cepeda@yahoo.com" class="link-icons" matTooltip="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a style="font-size:32px; color:white" href="https://www.linkedin.com/in/rolando-cepeda-3a520814a/" class="link-icons" matTooltip="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </mat-list-item>
+    </mat-toolbar-row>
   </mat-sidenav-content>
 
 </mat-sidenav-container>

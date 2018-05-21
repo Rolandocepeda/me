@@ -9,6 +9,9 @@ import { MaterialModule } from './modules/material/material.module';
 import { AboutmeComponent } from './components/aboutme/aboutme.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ResumeComponent } from './components/resume/resume.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { ContactComponent } from './components/contact/contact.component';
     AboutmeComponent,
     ProjectsComponent,
     ContactComponent,
+    SkillsComponent,
+    ResumeComponent,
   ],
   imports: [
     BrowserModule,
     MaterialModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
